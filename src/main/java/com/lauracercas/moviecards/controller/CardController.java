@@ -34,7 +34,7 @@ public class CardController {
         this.cardService = cardService;
     }
 
-    @GetMapping("/registerActorMovie")
+    @GetMapping("registerActorMovie")
     public String showInfoForm(Model model) {
         prepareCardInfoForm(model);
 

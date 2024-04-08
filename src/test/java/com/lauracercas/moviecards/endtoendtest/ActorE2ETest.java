@@ -36,7 +36,7 @@ public class ActorE2ETest {
     
     @Test
     public void testPageLoad() {
-        driver.get("http://localhost:9002/actors/new");
+        driver.get("http://localhost:8089/actors/new");
         assertEquals("FichasPeliculasApp | Aplicación de gestión de fichas de películas", driver.getTitle());
 
         assertTrue(driver.findElement(By.id("name")).isDisplayed());
@@ -47,14 +47,14 @@ public class ActorE2ETest {
 
     @Test
     public void testNewActorTitle() {
-        driver.get("http://localhost:9002/actors/new");
+        driver.get("http://localhost:8089/actors/new");
         WebElement title = driver.findElement(By.className("title"));
         assertEquals(NEW_ACTOR_TITLE, title.getText());
     }
 
     @Test
     public void testListActors() {
-        driver.get("http://localhost:9002/actors");
+        driver.get("http://localhost:8089/actors");
         WebElement title = driver.findElement(By.className("card-header"));
         assertEquals("Listado Actores", title.getText());
 

@@ -36,7 +36,7 @@ public class MovieE2ETest {
 
     @Test
     public void testPageLoadAndForm() {
-        driver.get("http://localhost:9002/movies/new");
+        driver.get("http://localhost:8089/movies/new");
         assertEquals("FichasPeliculasApp | Aplicación de gestión de fichas de películas", driver.getTitle());
 
         assertTrue(driver.findElement(By.id("title")).isDisplayed());
@@ -50,14 +50,14 @@ public class MovieE2ETest {
 
     @Test
     public void testNewMovieTitle() {
-        driver.get("http://localhost:9002/movies/new");
+        driver.get("http://localhost:8089/movies/new");
         WebElement title = driver.findElement(By.className("title"));
         assertEquals(NEW_MOVIE_TITLE, title.getText());
     }
 
     @Test
     public void testListMovies() {
-        driver.get("http://localhost:9002/movies");
+        driver.get("http://localhost:8089/movies");
         WebElement title = driver.findElement(By.className("card-header"));
         assertEquals("Listado Peliculas", title.getText());
 

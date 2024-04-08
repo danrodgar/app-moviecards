@@ -26,7 +26,7 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    @GetMapping("/movies")
+    @GetMapping("movies")
     public String getMoviesList(Model model) {
         model.addAttribute("movies", movieService.getAllMovies());
         return "movies/list";

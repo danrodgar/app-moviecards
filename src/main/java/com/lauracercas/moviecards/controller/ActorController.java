@@ -26,7 +26,7 @@ public class ActorController {
         this.actorService = actorService;
     }
 
-    @GetMapping("/actors")
+    @GetMapping("actors")
     public String getActorsList(Model model) {
         model.addAttribute("actors", actorService.getAllActors());
         return "actors/list";
