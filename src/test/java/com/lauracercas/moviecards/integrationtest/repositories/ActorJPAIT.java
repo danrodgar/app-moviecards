@@ -21,38 +21,29 @@ public class ActorJPAIT {
 
     @Test
     public void testSaveActor() {
-        // given
         Actor actor = new Actor();
         actor.setName("actor");
         actor.setBirthDate(new Date());
 
-        // when
         Actor savedActor = actorJPA.save(actor);
 
-        // then
-        assertNotNull(savedActor.getId()); // verifica que se asignó un ID
+        assertNotNull(savedActor.getId());
 
-        // when
         Optional<Actor> foundActor = actorJPA.findById(savedActor.getId());
 
-        // then
-        assertTrue(foundActor.isPresent()); // verifica que el actor se puede recuperar de la base de datos
-        assertEquals(savedActor, foundActor.get()); // verifica que el actor recuperado es el mismo que el actor
-                                                    // guardado
+        assertTrue(foundActor.isPresent());
+        assertEquals(savedActor, foundActor.get());
     }
 
     @Test
     public void testFindById() {
-        // given
         Actor actor = new Actor();
         actor.setName("actor");
         actor.setBirthDate(new Date());
         Actor savedActor = actorJPA.save(actor);
 
-        // when
         Optional<Actor> foundActor = actorJPA.findById(savedActor.getId());
 
-        // then
         assertTrue(foundActor.isPresent());
         assertEquals(savedActor, foundActor.get()); 
     }
