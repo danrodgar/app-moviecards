@@ -121,6 +121,6 @@ jobs:
           app-name: "moviecards-java"
           slot-name: "production"
           package: "*.jar"
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_bc740d85a59f42bdbde058d65bdc1713 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B9C5AA6D0DFA4CDE9E867C210926CF00 }}
         env:
           SPRING_PROFILES_ACTIVE: deploy
